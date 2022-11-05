@@ -1,6 +1,7 @@
 package com.app.sample
 
 import android.os.Bundle
+import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -18,7 +19,12 @@ class MainActivity : AppCompatActivity() {
         webView = findViewById(R.id.webview)
 
         webView.settings.javaScriptEnabled = true
-        webView.loadUrl(getString(R.string.app_url))
+
+        val isHttps = resources.getBoolean(R.bool.isHttps)
+        val url = getString(R.string.app_url)
+        val formattedUrl = if (isHttps) "https://${url}" else "http://${url}"
+        Log.d("URL",formattedUrl)
+        webView.loadUrl(formattedUrl)
 
         webView.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(
