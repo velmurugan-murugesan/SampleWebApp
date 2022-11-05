@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">appName</string>
     <string name="app_url">appUrl</string>
-    <bool name="isHttps">true</bool>
+    <bool name="is_https">false</bool>
 </resources>
