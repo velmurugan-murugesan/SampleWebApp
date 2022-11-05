@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         webView.settings.javaScriptEnabled = true
 
-        val isHttps = resources.getBoolean(R.bool.isHttps)
+        val isHttps = resources.getBoolean(R.bool.is_https)
         val url = getString(R.string.app_url)
         val formattedUrl = if (isHttps) "https://${url}" else "http://${url}"
         Log.d("URL",formattedUrl)
